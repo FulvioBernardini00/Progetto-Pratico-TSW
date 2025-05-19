@@ -1,0 +1,40 @@
+
+
+
+.navigation-bar {
+  background-color: #c5a24d;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-bar h1 {
+  font-size: 24px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.footer-basic {
+  background-color: #2d2d2d;
+  color: #ccc;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}

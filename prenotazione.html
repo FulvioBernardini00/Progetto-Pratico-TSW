@@ -3,71 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geppo Pub</title>
+  <title>Prenotazioni - Geppo Pub</title>
+  <link rel="stylesheet" href="css/prenotazione.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <div>
-        <h1>Geppo Pub</h1>
-
-        <!-- NAVBAR -->
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Prenota</a></li>
-          <li><a href="#">Contatti</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <!-- CONTENUTO PRINCIPALE -->
-  <main>
+  <section class="area-prenotazione">
     <h2>Prenota un tavolo</h2>
-    <p>Compila il form per prenotare un tavolo .</p>
+    <p>Compila il form per prenotare facilmente il tuo tavolo preferito.</p>
 
-    <!-- FORM DI PRENOTAZIONE -->
-    <form id="form-prenotazione">
-      <label for="nome">Nome: *</label><br>
-      <input type="text" id="nome" ><br><br>
+    <form>
+      <div class="riga-form">
+        <div class="campo">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome">
+        </div>
+        <div class="campo">
+          <label for="cognome">Cognome *</label>
+          <input type="text" id="cognome">
+        </div>
+      </div>
 
-      <label for="cognome">Cognome: *</label><br>
-      <input type="text" id="cognome" ><br><br>
+      <div class="riga-form">
+        <div class="campo">
+          <label for="telefono">Telefono *</label>
+          <input type="text" id="telefono">
+        </div>
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email">
+        </div>
+      </div>
 
-      <label for="telefono">Telefono: *</label><br>
-      <input type="text" id="telefono" ><br><br>
+      <div class="riga-form">
+        <div class="campo">
+          <label for="data">Data</label>
+          <select id="data">
+            <option>17/05</option><option>18/05</option><option>19/05</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="ora">Ora</label>
+          <select id="ora">
+            <option>19:00</option><option>20:30</option><option>22:00</option><option>23:30</option>
+          </select>
+        </div>
+      </div>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" ><br><br>
-
-      <label for="data">Data:</label><br>
-      <select id="data" name="data">
-        <option>17/05</option><option>18/05</option><option>19/05</option>
-        <option>20/05</option><option>21/05</option><option>22/05</option>
-      </select><br><br>
-
-      <label for="ora">Ora:</label><br>
-      <select id="ora" name="ora">
-        <option>19:00</option><option>20:30</option>
-        <option>22:00</option><option>23:30</option>
-      </select><br><br>
-
-      <button type="reset">Reset</button>
-      <button type="submit">Prenota</button>
+      <div id="form-footer">
+        <button class="btn-prenota" type="reset">Reset</button>
+        <button class="btn-prenota" type="submit">Prenota</button>
+      </div>
     </form>
 
-  </main>
-
-  <!-- FOOTER -->
-   <footer>
-    <p><strong>📅 Orari di Apertura</strong></p>
-    <p>Lunedì – Venerdì: 10:00 - 00:00</p>
-    <p>Sabato e Domenica: 17:00 - 02:00</p>
-    <p>&copy; 2025 Geppo Pub</p>
-   </footer>
+    <div class="piantina">
+      <div class="box-tavolo">1</div>
+      <div class="box-tavolo">2</div>
+      <div class="box-tavolo">3</div>
+      <div class="box-tavolo">4</div>
+      <div class="box-tavolo">5</div>
+      <div class="box-tavolo">6</div>
+      <div class="box-tavolo">7</div>
+      <div class="box-tavolo">8</div>
+      <div class="box-tavolo">9</div>
+      <div class="box-tavolo">10</div>
+    </div>
+  </section>
 
 </body>
 </html>
