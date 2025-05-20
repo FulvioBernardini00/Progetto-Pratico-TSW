@@ -1,88 +1,81 @@
 
-
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fefcf8;
-  margin: 0;
-  padding: 0;
-  color: #2c2c2c;
+.corpo-prenotazione {
+  padding-top: 100px;
+  background-color: #fdfdfd;
 }
 
-.area-prenotazione {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-.area-prenotazione h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.riga-form {
-  display: flex;
-  gap: 20px;
+.titolo-centrato {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.riga-form .campo {
-  flex: 1;
+.testo-centrato {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.contenitore-prenota {
   display: flex;
-  flex-direction: column;
-}
-
-.campo label {
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.campo input,
-.campo select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-#form-footer {
-  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: space-between;
-  margin-top: 30px;
 }
 
-.btn-prenota {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #caa015;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+.form-prenota {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.btn-prenota:hover {
-  background-color: #a88413;
+.mappa-tavoli {
+  flex: 1 1 45%;
+  background-color: #f0f0f0;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.piantina {
-  margin-top: 40px;
+.griglia-mappa {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
 }
 
-.box-tavolo {
-  background-color: #D4B483;
+.tavolo-cliccabile {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
+  background-color: #D4B483;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-weight: bold;
   color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tavolo-cliccabile:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .contenitore-prenota {
+    flex-direction: column;
+  }
+  .form-prenota,
+  .mappa-tavoli {
+    width: 100%;
+  }
+  .griglia-mappa {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

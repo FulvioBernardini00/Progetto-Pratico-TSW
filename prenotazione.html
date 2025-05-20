@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prenotazioni - Geppo Pub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geppo Pub</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/prenotazione.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-<body>
+<body id="inizio-pagina">
 
-  <header class="navbar-top">
-    <h1>Geppo Pub</h1>
-    <ul class="navbar-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">Prenota</a></li>
-      <li><a href="#">Contatti</a></li>
-    </ul>
+  <header class="nav-superiore">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo-animato" src="img/loghi/f6f3da73.png" width="100px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraLink">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="barraLink">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">MENU</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">PRENOTA</a></li>
+            <li class="nav-item"><a class="nav-link" href="contatti.html">CONTATTI</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <section class="area-prenotazione">
-    <h2>Prenota un tavolo</h2>
-    <p>Compila il form per prenotare facilmente il tuo tavolo preferito.</p>
+  <main class="corpo-prenotazione">
+    <div class="container">
+      <h1 class="titolo-centrato animate__animated animate__fadeInDown">Prenota</h1>
+      <p class="testo-centrato">Compila il form per scegliere i tavoli disponibili sulla mappa.</p>
 
-    <form>
-      <div class="riga-form">
-        <div class="campo">
-          <label for="nome">Nome *</label>
-          <input type="text" id="nome">
+      <div class="contenitore-prenota">
+        <div class="form-prenota">
+          <form id="formPrenotazione">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="nome" class="form-label">Nome: *</label>
+                <input type="text" class="form-control" id="nome">
+              </div>
+              <div class="col-md-6">
+                <label for="cognome" class="form-label">Cognome: *</label>
+                <input type="text" class="form-control" id="cognome">
+              </div>
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Telefono: *</label>
+                <input type="text" class="form-control" id="telefono">
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="col-md-6">
+                <label for="data" class="form-label">Data:</label>
+                <select class="form-select" id="data">
+                  <option>17/05</option><option>18/05</option><option>19/05</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="ora" class="form-label">Ora:</label>
+                <select class="form-select" id="ora">
+                  <option>19:00</option><option>20:30</option><option>22:00</option><option>23:30</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <button type="reset" class="btn btn-secondary w-100">Reset</button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-warning w-100">Mostra tavoli</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="campo">
-          <label for="cognome">Cognome *</label>
-          <input type="text" id="cognome">
+
+        <div class="mappa-tavoli">
+          <div class="griglia-mappa">
+            <div class="tavolo-cliccabile">1</div>
+            <div class="tavolo-cliccabile">2</div>
+            <div class="tavolo-cliccabile">3</div>
+            <div class="tavolo-cliccabile">4</div>
+            <div class="tavolo-cliccabile">5</div>
+            <div class="tavolo-cliccabile">6</div>
+            <div class="tavolo-cliccabile">7</div>
+            <div class="tavolo-cliccabile">8</div>
+            <div class="tavolo-cliccabile">9</div>
+            <div class="tavolo-cliccabile">10</div>
+          </div>
         </div>
       </div>
-
-      <div class="riga-form">
-        <div class="campo">
-          <label for="telefono">Telefono *</label>
-          <input type="text" id="telefono">
-        </div>
-        <div class="campo">
-          <label for="email">Email</label>
-          <input type="email" id="email">
-        </div>
-      </div>
-
-      <div class="riga-form">
-        <div class="campo">
-          <label for="data">Data</label>
-          <select id="data">
-            <option>17/05</option><option>18/05</option><option>19/05</option>
-          </select>
-        </div>
-        <div class="campo">
-          <label for="ora">Ora</label>
-          <select id="ora">
-            <option>19:00</option><option>20:30</option><option>22:00</option><option>23:30</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="form-footer">
-        <button class="btn-prenota" type="reset">Reset</button>
-        <button class="btn-prenota" type="submit">Prenota</button>
-      </div>
-    </form>
-
-    <div class="piantina">
-      <div class="box-tavolo">1</div>
-      <div class="box-tavolo">2</div>
-      <div class="box-tavolo">3</div>
-      <div class="box-tavolo">4</div>
-      <div class="box-tavolo">5</div>
-      <div class="box-tavolo">6</div>
-      <div class="box-tavolo">7</div>
-      <div class="box-tavolo">8</div>
-      <div class="box-tavolo">9</div>
-      <div class="box-tavolo">10</div>
     </div>
-  </section>
+  </main>
 
-  <footer class="footer-section">
-    <p><strong>📅 Orari di Apertura</strong></p>
-    <p>Lunedì – Venerdì: 10:00 - 00:00</p>
-    <p>Sabato e Domenica: 17:00 - 02:00</p>
-    <p>&copy; 2025 Geppo Pub</p>
+  <footer class="piede-pagina text-white text-center py-5">
+    <div class="contenitore-footer">
+      <p class="mb-2">📅 Orari di Apertura</p>
+      <p>Lunedì – Venerdì: <strong>10:00 - 00:00</strong></p>
+      <p>Sabato e Domenica: <strong>17:00 - 02:00</strong></p>
+      <hr class="border-secondary" style="opacity: 0.3;">
+      <p style="font-size: 0.9rem; color: #aaa;">&copy; 2025 Geppo Pub</p>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
