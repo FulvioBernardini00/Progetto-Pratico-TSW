@@ -1,64 +1,116 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Menu - Geppo Pub</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+
 </head>
-<body >
+<body id="inizio-pagina">
 
-  <!-- HEADER -->
-    <header>
-    <nav>
-        
-        <h1>Geppo Pub</h1>
-
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="prenota.html">Prenota</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <!-- Link foto ed altro da inserire -->
-        </ul>
+  <header class="nav-superiore">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo-animato" src="img/loghi/f6f3da73.png" width="100px" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraLink">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="barraLink">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">MENU</a></li>
+            <li class="nav-item"><a class="nav-link" href="prenotazione.html">PRENOTA</a></li>
+            <li class="nav-item"><a class="nav-link" href="contatti.html">CONTATTI</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    </header>
+  </header>
 
-    <main>
+  <main class="menu-container">
 
-    <!-- PIATTI -->
-    <h2>I nostri piatti</h2>
-    <!-- Immagini dei piatti da inserire -->
-    <p>In questa sezione presenteremo i nostri antipasti, primi e secondi piatti.</p>
-    
+    <section class="sezione-menu">
+      <h2 class="titolo-sezione">I nostri piatti</h2>
+      <div class="griglia-piatti">
+        <div class="piatto-box">
+          <img src="img/NUOVE/polpette.png" alt="polpette" />
+          <h3 class="titolo-piatto">Polpette</h3>
+          <p class="descrizione-piatto">Le nostre polpette fritte</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/Focaccia.png.jpeg" alt="Focaccia" />
+          <h3 class="titolo-piatto">Focaccia</h3>
+          <p class="descrizione-piatto">Focaccia con diversi condimenti</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/NUOVE/panino 2.png" alt="Panino" />
+          <h3 class="titolo-piatto">Panino</h3>
+          <p class="descrizione-piatto">I nostri panini con tutti ingredienti naturali</p>
+        </div>
+      </div>
+    </section>
 
-    <hr>
+    <section class="sezione-menu">
+      <h2 class="titolo-sezione">Drink</h2>
+      <div class="griglia-piatti">
+        <div class="piatto-box">
+          <img src="img/Vino2.png.jpeg" alt="Vino" />
+          <h3 class="titolo-piatto">vino</h3>
+          <p class="descrizione-piatto">Scegli tra i nostri vini.</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/Birre-ad-alta-e-bassa-fermentazione-quali-sono-le-differenze.png" alt="Birre" />
+          <h3 class="titolo-piatto">Birre</h3>
+          <p class="descrizione-piatto">Scegli tra i nostri vini</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/Cocktail.png.jpeg" alt="Cocktail" />
+          <h3 class="titolo-piatto">Cocktail</h3>
+          <p class="descrizione-piatto">Scegli tra i nostri cocktail.</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- DRINK -->
-    <h2>La nostra DrinkList</h2>
-    <!-- immagini bevande da inserire -->
-    <p>Qui troverai una selezione di vini, birre e cocktail artigianali.</p>
-    
+    <section class="sezione-menu">
+      <h2 class="titolo-sezione">I nostri dolci</h2>
+      <div class="griglia-piatti">
+        <div class="piatto-box">
+          <img src="img/Dolce1.png.jpeg" alt="Cheesecake" />
+          <h3 class="titolo-piatto">Cheesecake</h3>
+          <p class="descrizione-piatto">Cheesecake neutra</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/Dolce2.png.jpeg" alt="Budino" />
+          <h3 class="titolo-piatto">Budino</h3>
+          <p class="descrizione-piatto">Il nostro budino fatto in casa</p>
+        </div>
+        <div class="piatto-box">
+          <img src="img/NUOVE/biscotto.png" alt="Biscotti" />
+          <h3 class="titolo-piatto">Biscotti</h3>
+          <p class="descrizione-piatto">I nostri biscotti fatti in casa.</p>
+        </div>
+      </div>
+    </section>
 
-    <hr>
+  </main>
 
-    <!-- DOLCI -->
-    <h2>I nostri dolci</h2>
-    <!-- immagini dolci da inserire -->
-    <p>Questa sezione includerà i dolci fatti in casa del Geppo Pub.</p>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <p><strong>📅 Orari di Apertura</strong></p>
-        <p>Lunedì – Venerdì: 10:00 - 00:00</p>
-        <p>Sabato e Domenica: 17:00 - 02:00</p>
-        <p>&copy; 2025 Geppo Pub</p>
-    </footer>
-
-
+  <footer class="piede-pagina text-white text-center py-5">
+    <div class="contenitore-footer">
+      <p class="mb-2">📅 Orari di Apertura</p>
+      <p>Lunedì – Venerdì: <strong>10:00 - 00:00</strong></p>
+      <p>Sabato e Domenica: <strong>17:00 - 02:00</strong></p>
+      <hr class="border-secondary" style="opacity: 0.3;">
+      <p style="font-size: 0.9rem; color: #aaa;">&copy; 2025 Geppo Pub</p>
+    </div>
+  </footer>
 
 
 </body>
