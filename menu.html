@@ -37,7 +37,7 @@
     <!-- SEZIONE PIATTI -->
     <section class="sezione-menu">
       <h2 class="titolo-sezione text-center mb-4">I nostri piatti</h2>
-      <div id="carouselPiatti" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false" data-bs-pause="false" >
+      <div id="carouselPiatti" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false" >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="img/NUOVE/polpette.png" class="d-block w-100" alt="Fritti">
@@ -68,13 +68,21 @@
             </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPiatti" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Precedente</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPiatti" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Successivo</span>
+        </button>
       </div>
     </section>
 
     <!-- SEZIONE DRINK -->
     <section class="sezione-menu">
       <h2 class="titolo-sezione text-center mb-4">La nostra DrinkList</h2>
-      <div id="carouselDrink" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false"  data-bs-pause="false">
+      <div id="carouselDrink" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="img/Vino2.png.jpeg" class="d-block w-100" alt="Vini">
@@ -105,13 +113,21 @@
             </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDrink" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Precedente</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDrink" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Successivo</span>
+        </button>
       </div>
     </section>
 
     <!-- SEZIONE DOLCI -->
     <section class="sezione-menu">
       <h2 class="titolo-sezione text-center mb-4">I nostri dolci</h2>
-      <div id="carouselDolci" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false"  data-bs-pause="false">
+      <div id="carouselDolci" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-touch="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="img/Dolce1.png.jpeg" class="d-block w-100" alt="Cheesecake">
@@ -135,6 +151,14 @@
             </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDolci" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Precedente</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDolci" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Successivo</span>
+        </button>
       </div>
     </section>
 
@@ -149,6 +173,16 @@
       <p style="font-size: 0.9rem; color: #aaa;">&copy; 2025 Geppo Pub</p>
     </div>
   </footer>
+<script>
 
+    ScrollReveal().reveal('.reveal_footer', {
+    origin: 'bottom',
+    distance: '60px',
+    duration: 1000,
+    easing: 'ease-in-out',
+    reset: true
+  });
+  
+</script>
 </body>
 </html>
