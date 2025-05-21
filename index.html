@@ -45,17 +45,6 @@
 
   <main>
     <div class="container py-4">
-      <div class="row servizio-box">
-        <div class="col-md-6 sez-col-text reveal-right">
-          <h2 class="testo-sez">Location</h2>
-          <p>Il nostro pub si trova in Via Tiburto, accanto al centro sportivo e vicino al centro città. Parcheggio comodo disponibile!</p>
-          <a href="contatti.html"><button class="bottoni" id="contattaci-btn">CONTATTACI</button></a>
-        </div>
-        <div class="col-md-6 sez-col-img reveal">
-          <img src="img\NUOVE\interno.png" class="img-fluid rounded shadow">
-        </div>
-      </div>
-      <div class="section-divider"></div>
       <div class="row servizio-box reveal align-items-center">
         <div class="col-md-5 sez-col-img">
           <img src="img/raviolo_prod.png" class="img-fluid rounded shadow">
@@ -77,6 +66,17 @@
           <img src="img/1-f38ecc3c.png" class="img-fluid rounded shadow">
         </div>
       </div>
+      <div class="section-divider"></div>
+      <div class="row servizio-box">
+        <div class="col-md-6 sez-col-text reveal-right">
+          <h2 class="testo-sez">Dove siamo</h2>
+          <p>Il nostro pub si trova in Via Tiburto, accanto al centro sportivo e vicino al centro città. Parcheggio comodo disponibile!</p>
+          <a href="contatti.html"><button class="bottoni" id="contattaci-btn">CONTATTACI</button></a>
+        </div>
+        <div class="col-md-6 sez-col-img reveal">
+          <img src="img\NUOVE\interno.png" class="img-fluid rounded shadow">
+        </div>
+      </div>
     </div>
   </main>
 
@@ -91,6 +91,53 @@
   </footer>
 
  
+<script>
 
+  ScrollReveal().reveal('.sez-col-text', {
+    origin: 'left',
+    distance: '120px',
+    duration: 1200,
+    delay: 200,
+    easing: 'ease-out',
+    reset: true
+  });
+
+  ScrollReveal().reveal('.sez-col-img', {
+    scale: 0.85,
+    duration: 1200,
+    delay: 300,
+    opacity: 0,
+    easing: 'ease-in-out',
+    reset: true
+  });
+
+  ScrollReveal().reveal('.reveal_footer', {
+    origin: 'bottom',
+    distance: '60px',
+    duration: 1000,
+    easing: 'ease-in-out',
+    reset: true
+  });
+
+  ScrollReveal().reveal('#slogan', {
+    origin: 'top',
+    distance: '80px',
+    duration: 1300,
+    opacity: 0,
+    easing: 'ease-in-out',
+    reset: true
+  });
+
+  ScrollReveal().reveal('.reveal-right', {
+  origin: 'right',
+  distance: '120px',
+  duration: 1200,
+  delay: 200,
+  easing: 'ease-out',
+  reset: true
+});
+
+
+</script>
 </body>
 </html>
