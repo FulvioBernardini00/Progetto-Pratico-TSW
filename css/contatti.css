@@ -8,7 +8,6 @@ body {
   animation: fadeIn 2s;
 }
 
-
 .contenitore-contatti {
   display: flex;
   flex-wrap: wrap;
@@ -73,5 +72,46 @@ body {
 .contenitore-footer {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.section-box {
+  background: url('../img/texture_marrone.png') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.my-btn {
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.my-btn:hover {
+  background-color: #d48f00;
+}
+
+.text-princ {
+  color: #5a3921;
+  font-weight: bold;
+}
+
+.contatti-info {
+  font-size: 1.1rem;
+  color: #5a3921;
+}
+
+.border_radius {
+  border-radius: 20px;
+}
+
+.section-box {
+  border-radius: 20px;
+  padding: 2rem;
 }
 
