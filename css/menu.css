@@ -3,6 +3,9 @@ body {
   background-color: #fdfdfd;
 }
 
+.border_radius {
+  border-radius: 20px;
+}
 
 .logo-animato {
   border-radius: 20px;

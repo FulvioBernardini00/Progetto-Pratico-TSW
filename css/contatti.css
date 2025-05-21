@@ -3,66 +3,62 @@ body {
   background-color: #fdfdfd;
 }
 
-.logo-animato {
+.border_radius {
   border-radius: 20px;
-  animation: fadeIn 2s;
 }
 
-.contenitore-contatti {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #fef9f3;
+.section-box {
+  background: url('../img/texture_marrone.png') center center / cover no-repeat;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-.info-contatti, .form-contatto {
-  flex: 1 1 300px;
-}
-
-.info-contatti h2 {
-  margin-top: 1rem;
-  color: #5a3921;
-  font-size: 1.3rem;
-}
-
-.info-contatti p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.form-contatto h2 {
-  margin-bottom: 1rem;
-  color: #5a3921;
-}
-
-.form-contatto form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form-contatto input,
-.form-contatto textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-.form-contatto button {
+.my-btn {
   background-color: #f0a500;
-  color: #fff;
-  padding: 0.8rem;
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: bold;
   font-size: 1rem;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.form-contatto button:hover {
+.my-btn:hover {
   background-color: #d48f00;
+}
+
+.text-princ {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.contatti-info {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+}
+
+.strip-col-text {
+  padding: 20px;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    justify-content: center !important;
+    text-align: center;
+  }
 }
 
 .piede-pagina {
@@ -74,44 +70,28 @@ body {
   margin: 0 auto;
 }
 
-.section-box {
-  background: url('../img/texture_marrone.png') center center / cover no-repeat;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+@media (max-width: 767px) {
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .section-box {
+    padding: 20px;
+  }
+
+  .my-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
 }
 
-.my-btn {
-  background-color: #f0a500;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 0.7rem 2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+@media (min-width: 768px) and (max-width: 992px) {
+  .my-btn {
+    font-size: 15px;
+    padding: 10px 26px;
+  }
 }
-
-.my-btn:hover {
-  background-color: #d48f00;
-}
-
-.text-princ {
-  color: #5a3921;
-  font-weight: bold;
-}
-
-.contatti-info {
-  font-size: 1.1rem;
-  color: #5a3921;
-}
-
-.border_radius {
-  border-radius: 20px;
-}
-
-.section-box {
-  border-radius: 20px;
-  padding: 2rem;
-}
-
