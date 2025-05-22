@@ -18,19 +18,21 @@ body {
   margin-bottom: 60px;
 }
 
-.my-btn {
-  background-color: #f0a500;
-  color: white;
+#invia-btn {
+  background-color: #f1c40f;         
+  color: #000;                        
   border: none;
-  border-radius: 10px;
-  padding: 10px 30px;
+  border-radius: 12px;
+  padding: 10px 20px;
   font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.my-btn:hover {
-  background-color: #d48f00;
+#invia-btn:hover {
+  background-color: #d4ac0d;         
+  transform: scale(1.05);
 }
 
 .text-princ {
@@ -50,6 +52,32 @@ body {
   padding: 20px;
 }
 
+.box {
+  background-color: #c18e47; 
+  border: 2px solid #b08d5c; 
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin-top: 2rem;
+  transition: transform 0.3s ease;
+  width: 90%;              
+  max-width: 900px;        
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box:hover {
+  transform: scale(1.01);
+}
+
+.zoom-icon img {
+  transition: transform 0.3s ease;
+}
+
+.zoom-icon:hover img {
+  transform: scale(1.2);
+}
+
 
 @media (max-width: 767px) {
   .navbar-nav {
@@ -66,6 +94,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+
 
 @media (max-width: 767px) {
   h3 {
