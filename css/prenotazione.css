@@ -1,4 +1,18 @@
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
 
 .corpo-prenotazione {
   padding-top: 150px;
@@ -7,7 +21,6 @@
 }
 
 .titolo-centrato {
-
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
@@ -22,11 +35,9 @@
   margin-bottom: 40px;
 }
 
-
-
 #prenota-btn {
-  background-color: #f1c40f;         
-  color: #000;                        
+  background-color: #f1c40f;
+  color: #000;
   border: none;
   border-radius: 12px;
   padding: 10px 20px;
@@ -37,12 +48,12 @@
 }
 
 #prenota-btn:hover {
-  background-color: #d4ac0d;         
+  background-color: #d4ac0d;
   transform: scale(1.05);
 }
 
 #reset-btn {
-  background-color: #e74c3c;         
+  background-color: #e74c3c;
   color: white;
   border: none;
   border-radius: 12px;
@@ -54,7 +65,7 @@
 }
 
 #reset-btn:hover {
-  background-color: #c0392b;          
+  background-color: #c0392b;
   transform: scale(1.05);
 }
 
@@ -67,17 +78,14 @@
 }
 
 .servizio-box {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    background: url('../img/texture_marrone.png') center center / cover no-repeat;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    color: white;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background: url('../img/texture_marrone.png') center center / cover no-repeat;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  color: white;
 }
-
-
-
 
 .form-prenota {
   flex: 1 1 45%;
@@ -87,33 +95,40 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+#container-mappe {
+  position: relative;
+  min-height: 320px; 
+  overflow: hidden;
+}
+
+
 .mappa-tavoli {
-  flex: 1 1 45%;
-  background-color:  #fef8f0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fef8f0;
   padding: 25px;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
+
+.mappa-attiva {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  transform: translateY(0);
+}
+
+
 
 .griglia-mappa {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-}
-
-
-
-
-.tavolo-cliccabile:hover {
-  transform: scale(1.1);
-  background-color: #8b5e3c;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-
-.griglia-mappa{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -123,7 +138,6 @@
 }
 
 .tavolo-cliccabile {
-  
   background-color: #4CAF50;
   display: flex;
   justify-content: center;
@@ -193,17 +207,3 @@
   align-items: center;
 }
 
-
-
-@media (max-width: 768px) {
-  .contenitore-prenota {
-    flex-direction: column;
-  }
-  .form-prenota,
-  .mappa-tavoli {
-    width: 100%;
-  }
-  .griglia-mappa {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
