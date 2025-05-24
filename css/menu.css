@@ -127,38 +127,79 @@ body {
   transform: scale(1.03);     
 }
 
-@media (max-width: 768px) {
-  .contenitore-contatti {
+@media (max-width: 430px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .titolo-centrato,
+  .text-princ,
+  .titolo-sezione,
+  .testo-sez {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .sottotitolo-centrato,
+  .testo-centrato,
+  .contatti-info,
+  .descrizione-piatto {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .griglia-servizi,
+  .griglia-piatti,
+  .griglia-mappa {
+    gap: 15px;
+    padding: 20px 10px;
     flex-direction: column;
   }
 
-  .info-contatti,
-  .form-contatto {
-    width: 100%;
+  .servizio-box,
+  .box,
+  .form-prenota,
+  .mappa-tavoli {
+    padding: 20px;
+    width: 95%;
   }
-}
 
-@media (max-width: 768px) {
+  .sez-col-text h2 {
+    font-size: 36px;
+  }
+
+  .sez-col-text p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-right: 10px;
+  }
+
+  .piatto-box img,
+  .img-zoom,
+  .carousel img {
+    height: 200px;
+  }
+
+  .bottoni,
+  #invia-btn,
+  #prenota-btn,
+  #reset-btn {
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .carousel-caption h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .carousel-caption p {
     font-size: 0.85rem;
   }
-
-  .carousel img {
-    max-height: 250px;
-  }
-
-  .titolo-sezione {
-    font-size: 1.5rem;
-  }
-
-  .sez-div {
-    width: 90%;
-    height: 2px;
-    margin: 30px auto;
-  }
 }
-

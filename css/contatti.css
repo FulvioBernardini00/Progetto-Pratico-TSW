@@ -79,72 +79,79 @@ body {
 }
 
 
-@media (max-width: 767px) {
-  .navbar-nav {
-    justify-content: center !important;
+@media (max-width: 430px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .titolo-centrato,
+  .text-princ,
+  .titolo-sezione,
+  .testo-sez {
+    font-size: 1.5rem;
     text-align: center;
   }
-}
 
-.piede-pagina {
-  background-color: #1e1e1e;
-}
-
-.contenitore-footer {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-
-@media (max-width: 767px) {
-  h3 {
-    font-size: 22px;
+  .sottotitolo-centrato,
+  .testo-centrato,
+  .contatti-info,
+  .descrizione-piatto {
+    font-size: 1rem;
+    text-align: center;
   }
 
-  p {
-    font-size: 14px;
+  .griglia-servizi,
+  .griglia-piatti,
+  .griglia-mappa {
+    gap: 15px;
+    padding: 20px 10px;
+    flex-direction: column;
   }
 
-  .section-box {
+  .servizio-box,
+  .box,
+  .form-prenota,
+  .mappa-tavoli {
     padding: 20px;
-  }
-
-  .my-btn {
-    font-size: 14px;
-    padding: 8px 20px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-  .my-btn {
-    font-size: 15px;
-    padding: 10px 26px;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-box {
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .box {
     width: 95%;
-    padding: 1.5rem;
   }
 
-  .contatti-info {
-    font-size: 16px;
+  .sez-col-text h2 {
+    font-size: 36px;
   }
 
-  .text-princ {
-    font-size: 26px;
+  .sez-col-text p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-right: 10px;
   }
 
-  #invia-btn {
+  .piatto-box img,
+  .img-zoom,
+  .carousel img {
+    height: 200px;
+  }
+
+  .bottoni,
+  #invia-btn,
+  #prenota-btn,
+  #reset-btn {
+    font-size: 14px;
     width: 100%;
-    font-size: 16px;
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.85rem;
   }
 }
-
