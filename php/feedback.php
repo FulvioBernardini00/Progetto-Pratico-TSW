@@ -3,7 +3,7 @@
 if (isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["messaggio"])) {
 
     // Connessione al database
-    $db_conn = pg_connect("host=localhost port=5432 dbname=geppo_pub user=postgres password=Fulvietto1964.")
+    $db_conn = pg_connect("host=localhost port=5432 dbname=geppo_pub user=postgres password=password1")
         or die("Connessione al database fallita: " . pg_last_error());
 
     // Recupero dei dati dal form
