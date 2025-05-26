@@ -47,6 +47,16 @@ main {
   cursor: pointer;
 }
 
+#prenota-btn:disabled {
+  background-color: #aaa;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+
+
 #prenota-btn:hover {
   background-color: #d4ac0d;
   transform: scale(1.05);
@@ -150,6 +160,28 @@ main {
   user-select: none;
 }
 
+.tavolo-cliccabile.tavolo-selezionato {
+  background-color: blue;
+  border: 4px solid black;
+}
+
+.tavolo-disabilitato {
+  background-image: url('../img/prenotato.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  cursor: not-allowed;
+  font-size: 0; /* Nasconde il testo del numero tavolo */
+}
+
+
+
+
 .tavolo-cliccabile:hover {
   transform: scale(1.1);
   background-color: #8b5e3c;
@@ -206,5 +238,4 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 
