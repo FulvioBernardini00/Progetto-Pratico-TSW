@@ -23,15 +23,6 @@ body {
   color: #5a3921;
 }
 
-.piede-pagina {
-  background-color: #1e1e1e;
-}
-
-.contenitore-footer {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .carousel img {
   max-height: 500px;
   object-fit: cover;
