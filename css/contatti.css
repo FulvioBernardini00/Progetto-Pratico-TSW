@@ -62,10 +62,6 @@ body {
   margin-right: auto;
 }
 
-.box:hover {
-  transform: scale(1.01);
-}
-
 .zoom-icon img {
   transition: transform 0.3s ease;
 }
