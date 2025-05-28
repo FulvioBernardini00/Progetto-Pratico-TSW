@@ -3,9 +3,11 @@ if (isset($_GET["data"]) && isset($_GET["ora"])) {
     $db_conn = pg_connect("host=localhost port=5432 dbname=geppo_pub user=postgres password=password1")
         or die('Connessione fallita: ' . pg_last_error());
 
+    // prendo dati dalla richiesta   
     $data = $_GET["data"];
     $ora = $_GET["ora"];
 
+    //cerco tavoli prenotati
     $query = "SELECT numero_tavolo FROM disponibilita_tavolo
               WHERE data = '$data' AND ora = '$ora' AND prenotato = TRUE";
 
@@ -16,6 +18,8 @@ if (isset($_GET["data"]) && isset($_GET["ora"])) {
         $tavoli_prenotati[] = $row["numero_tavolo"];
     }
 
+
+    //converto in JSON per risposta al JS
     header("Content-Type: application/json");
     echo json_encode($tavoli_prenotati);
 }

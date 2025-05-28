@@ -1,0 +1,123 @@
+html, body {
+  background-color: #D4B483 !important;
+  margin: 0;
+  padding: 50px;
+  height: 100%;
+}
+
+
+.testo{
+  color: white;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: url('../img/texture_marrone.png') center center / cover no-repeat;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: none; 
+}
+
+
+h2 {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: #000000;        
+  padding: 10px 20px;             
+  border-radius: 12px;           
+  display: inline-block;          
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+h4 {
+  color: #5a3921;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+form input,
+form select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+form button:hover {
+  background-color: #d4ac0d;
+  transform: scale(1.05);
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table th {
+  background-color: #d4b483;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.text-danger {
+  color: #e74c3c;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}

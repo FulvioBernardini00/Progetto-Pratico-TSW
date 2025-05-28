@@ -20,6 +20,7 @@ $(document).ready(function () {
     },
     
   });
+  // controllo per aggiornare lo stato del bottone
   $("#formPrenotazione input, #formPrenotazione select").on("input change", checkFormAndTavolo);
 
 
@@ -140,5 +141,6 @@ $(document).ready(function () {
     $(this).text(isInternaAttiva ? "Passa al Giardino" : "Torna all'interno");
   });
 
+  // carica tavoli già prenotati
   disabilitaTavoliPrenotati();
 });
