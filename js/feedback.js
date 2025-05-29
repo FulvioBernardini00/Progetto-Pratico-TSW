@@ -58,9 +58,8 @@ $(document).ready(function () {
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-        $("#testo-banner").text("Errore di connessione.");
-        $("#banner-conferma").fadeIn();
+        console.log("Errore AJAX:", textStatus, errorThrown);
+        alert("Errore durante la connessione. Riprova.");
       }
     });
   }
