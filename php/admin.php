@@ -1,35 +1,41 @@
 <?php
 session_start();
+
 $conn = pg_connect("host=localhost port=5432 dbname=geppo_pub user=postgres password=password1");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Se è stato premuto il pulsante di login
     if (isset($_POST['login'])) {
         $user = $_POST['username'];
         $pass = $_POST['password'];
-        if ($user === 'admin' && $pass === '1234') {
-            $_SESSION['admin'] = true;
-        } else {
-            $errore = "Credenziali errate.";
-        }
-    } elseif (isset($_SESSION['admin']) && isset($_POST['elimina'])) {
-        $id = (int) $_POST['elimina'];
 
+        // Controllo credenziali
+        if ($user === 'admin' && $pass === '1234') {
+            $_SESSION['admin'] = true; 
+        } else {
+            $errore = "Credenziali errate."; 
+        }
+
+    // Se l'admin è loggato e ha premuto "Elimina" su una prenotazione
+    } elseif (isset($_SESSION['admin']) && isset($_POST['elimina'])) {
+        $id = (int) $_POST['elimina']; 
+
+        // Recupero la disponibilità collegata a quella prenotazione
         $queryInfo = "SELECT id_disponibilita FROM prenotazione WHERE id = $id";
         $resultInfo = pg_query($conn, $queryInfo);
         if ($row = pg_fetch_assoc($resultInfo)) {
             $id_disp = $row['id_disponibilita'];
+
             pg_query($conn, "UPDATE disponibilita_tavolo SET prenotato = FALSE WHERE id = $id_disp");
         }
 
+        // Cancello la prenotazione
         pg_query($conn, "DELETE FROM prenotazione WHERE id = $id");
-    } elseif (isset($_SESSION['admin']) && isset($_POST['modifica'])) {
-        $id = (int) $_POST['id'];
-        $nome = pg_escape_string($conn, $_POST['nome']);
-        $cognome = pg_escape_string($conn, $_POST['cognome']);
-        $telefono = pg_escape_string($conn, $_POST['telefono']);
-        $email = pg_escape_string($conn, $_POST['email']);
-        pg_query($conn, "UPDATE prenotazione SET nome='$nome', cognome='$cognome', telefono='$telefono', email='$email' WHERE id=$id");
+
+    // Se l'admin vuole aggiungere una nuova prenotazione
     } elseif (isset($_SESSION['admin']) && isset($_POST['aggiungi'])) {
+        // Prendo i dati dal form e li sanifico per evitare problemi di sicurezza
         $nome = pg_escape_string($conn, $_POST['nome']);
         $cognome = pg_escape_string($conn, $_POST['cognome']);
         $telefono = pg_escape_string($conn, $_POST['telefono']);
@@ -38,10 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ora = $_POST['ora'];
         $tavolo = (int) $_POST['tavolo'];
 
+        // Controllo se esiste già una disponibilità per quel tavolo, data e ora
         $q = "SELECT id FROM disponibilita_tavolo WHERE numero_tavolo = $tavolo AND data = '$data' AND ora = '$ora'";
         $res = pg_query($conn, $q);
         $r = pg_fetch_assoc($res);
 
+        // Se non esiste, la creo e la segno come prenotata
         if (!$r) {
             $insert_disp = "INSERT INTO disponibilita_tavolo (numero_tavolo, data, ora, prenotato) 
                             VALUES ($tavolo, '$data', '$ora', TRUE) RETURNING id";
@@ -49,17 +57,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $r = pg_fetch_assoc($res);
         }
 
+        // Se tutto va bene, aggiungo la prenotazione
         if ($r) {
             $id_disp = $r['id'];
             pg_query($conn, "INSERT INTO prenotazione(nome, cognome, telefono, email, id_disponibilita, numero_tavolo)
                             VALUES ('$nome', '$cognome', '$telefono', '$email', $id_disp, $tavolo)");
+            // Segno la disponibilità come occupata
             pg_query($conn, "UPDATE disponibilita_tavolo SET prenotato = TRUE WHERE id = $id_disp");
         } else {
-            $errore = "Errore durante la creazione della disponibilità.";
+            $errore = "Errore durante la creazione della disponibilità."; // In caso di errore
         }
     }
 }
 ?>
+
+<!--  HTML  -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -69,7 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body>
+
 <?php if (!isset($_SESSION['admin'])): ?>
+  <!-- Se non sono loggato, mostro il form di login -->
   <div class="container rounded p-5 shadow">
     <h2 class="text-center mb-4 testo">Login Admin</h2>
     <?php if (isset($errore)) echo "<p class='text-danger'>$errore</p>"; ?>
@@ -79,13 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <button type="submit" name="login" class="btn btn-warning w-100">Login</button>
     </form>
   </div>
+
 <?php else: ?>
+  <!-- Se sono loggato come admin, mostro la dashboard -->
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2 class="testo">Gestione Prenotazioni</h2>
       <a href="logout.php" class="btn btn-danger">Logout</a>
     </div>
 
+    <!-- Form aggiungi prenotazione -->
     <h4>Aggiungi nuova prenotazione</h4>
     <form method="POST" class="row g-3 mb-4">
       <input type="hidden" name="aggiungi" value="1">
@@ -123,30 +140,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if (isset($errore)) echo "<p class='text-danger'>$errore</p>"; ?>
 
+    <!-- Tabella delle prenotazioni esistenti -->
     <table class="table table-bordered table-hover">
       <thead class="table-dark">
         <tr><th>Nome</th><th>Cognome</th><th>Telefono</th><th>Email</th><th>Data</th><th>Ora</th><th>Tavolo</th><th>Azioni</th></tr>
       </thead>
       <tbody>
       <?php
+        // Query che mostra tutte le prenotazioni collegate alle disponibilità
         $result = pg_query($conn, "SELECT p.id, p.nome, p.cognome, p.telefono, p.email, d.data, d.ora, d.numero_tavolo
         FROM prenotazione p JOIN disponibilita_tavolo d ON p.id_disponibilita = d.id ORDER BY data, ora");
+
+        // Stampo ogni prenotazione 
         while ($row = pg_fetch_assoc($result)) {
           echo "<tr>
-            <form method='POST'>
-            <td><input type='text' name='nome' value='{$row['nome']}' class='form-control'></td>
-            <td><input type='text' name='cognome' value='{$row['cognome']}' class='form-control'></td>
-            <td><input type='text' name='telefono' value='{$row['telefono']}' class='form-control'></td>
-            <td><input type='email' name='email' value='{$row['email']}' class='form-control'></td>
-            <td>{$row['data']}</td><td>{$row['ora']}</td><td>{$row['numero_tavolo']}</td>
-            <td class='d-flex gap-1'>
-              <input type='hidden' name='id' value='{$row['id']}'>
-              <button name='modifica' class='btn btn-primary btn-sm'>Modifica</button>
-            </form>
-            <form method='POST'>
-              <input type='hidden' name='elimina' value='{$row['id']}'>
-              <button class='btn btn-danger btn-sm'>Elimina</button>
-            </form>
+            <td>{$row['nome']}</td>
+            <td>{$row['cognome']}</td>
+            <td>{$row['telefono']}</td>
+            <td>{$row['email']}</td>
+            <td>{$row['data']}</td>
+            <td>{$row['ora']}</td>
+            <td>{$row['numero_tavolo']}</td>
+            <td>
+              <form method='POST'>
+                <input type='hidden' name='elimina' value='{$row['id']}'>
+                <button class='btn btn-danger btn-sm'>Elimina</button>
+              </form>
             </td>
           </tr>";
         }
@@ -154,6 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </tbody>
     </table>
 
+    <!-- Tabella messaggi feedback -->
     <h4 class="mt-5">Messaggi di Feedback</h4>
     <table class="table table-bordered table-hover mt-3">
       <thead class="table-secondary">
@@ -173,7 +193,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       ?>
       </tbody>
     </table>
-
   </div>
 <?php endif; ?>
 </body>
